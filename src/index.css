@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans overflow-x-hidden;
+    background-color: #050505;
+    color: #F5F5F5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+    color: #F5F5F5;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background-color: #0D0D0D;
+    @apply border border-[rgba(255,255,255,0.08)] transition-all duration-500 rounded-[24px];
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-white text-midnight hover:bg-opacity-90 rounded-full font-medium transition-all duration-300 shadow-xl flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 bg-transparent border border-[rgba(255,255,255,0.15)] hover:border-[rgba(255,255,255,0.3)] text-white rounded-full font-medium transition-all duration-300 flex items-center gap-2;
+  }
+
+  .section-padding {
+    @apply py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto;
+  }
+}
+
+@layer utilities {
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[rgba(255,255,255,0.1)] rounded-full hover:bg-[rgba(255,255,255,0.2)] transition-colors;
+}
+
+::selection {
+  @apply bg-white/20 text-white;
+}
+
+* {
+  @apply transition-colors duration-300;
+}
