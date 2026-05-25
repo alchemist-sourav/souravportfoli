@@ -4,6 +4,18 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
+      title: "Data Science Job Simulation",
+      company: "BCG X",
+      period: "05/2026",
+      description: "Completed a customer churn analysis simulation for XYZ Analytics using Python (Pandas, NumPy). Engineered a random forest model achieving a 50% recall rate in predicting customer churn, and delivered an executive summary with actionable insights for decision-making."
+    },
+    {
+      title: "Front-End Software Engineering Virtual Experience",
+      company: "Skyscanner",
+      period: "05/2026",
+      description: "Completed a job simulation building a web application using React. Developed a page for picking a travel date using Skyscanner’s open-source Backpack React library, customized the application, and ran automated tests to ensure proper rendering."
+    },
+    {
       title: "Creative Lead",
       company: "Mulearn.KNP",
       period: "01/2026 - Present",
