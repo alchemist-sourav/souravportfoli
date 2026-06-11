@@ -23,21 +23,30 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "AI Personal Assistant",
-      category: "Voice AI",
-      tags: ["Speech Rec", "TTS"],
-      link: "#",
-      desc: "JARVIS-inspired voice assistant for task automation.",
+      title: "Alchemist OS",
+      category: "AI Operating System",
+      tags: ["Python", "Next.js", "AI Agents"],
+      link: "https://github.com/alchemist-sourav/-Alchemist-OS",
+      desc: "A futuristic, highly autonomous AI operating system acting as a digital operator and continuous background companion.",
       colSpan: "md:col-span-1"
     },
     {
       id: 4,
-      title: "Tesla Interface",
-      category: "UI/UX",
-      tags: ["Figma", "Prototyping"],
-      link: "https://www.figma.com/proto/G6dLtuWkjCTIGvqaNrCXDB?node-id=0-1",
-      desc: "Complete Tesla app interface design featuring smooth animations.",
+      title: "Pieza",
+      category: "Full-Stack App",
+      tags: ["MERN", "Socket.io", "Razorpay"],
+      link: "https://github.com/alchemist-sourav/pizza-app",
+      desc: "A modern web application for custom-built pizzas with real-time order tracking and secure payments.",
       colSpan: "md:col-span-2"
+    },
+    {
+      id: 5,
+      title: "SNIB Space Hero",
+      category: "3D Web Experience",
+      tags: ["Next.js", "Three.js", "Framer Motion"],
+      link: "https://space-3-d.vercel.app",
+      desc: "A visually stunning, interactive landing page blending 3D environments with premium 2D UI elements and micro-interactions.",
+      colSpan: "md:col-span-3"
     }
   ];
 

@@ -1,16 +1,60 @@
-# React + Vite
+# Sourav's Digital Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A futuristic, highly polished personal portfolio website showcasing my work as a Developer and Designer. Built with React, Vite, Tailwind CSS, and Framer Motion.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Modern & Premium Design**: A sleek dark mode UI with glassmorphism effects, smooth gradients, and micro-interactions.
+- **Projects Showcase**: Highlighting selected projects including AI Operating Systems, Full-Stack Applications, Computer Vision, and 3D Web Experiences.
+- **Design Gallery**: A dedicated section for my Graphic Design and UI/UX work, featuring event posters, social media creatives, banners, and web designs.
+- **Interactive Animations**: Smooth scroll animations and hover effects powered by Framer Motion.
+- **Responsive Layout**: Fully optimized for both desktop and mobile viewing.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+To run this project locally, follow these steps:
+
+### Prerequisites
+Make sure you have Node.js installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Alchemist1910/souravportfoli.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd souravportfoli
+   ```
+
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development Server
+
+Start the local development server:
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:5173/`.
+
+### Build for Production
+
+To build the app for production, run:
+```bash
+npm run build
+```
+
+## Contact
+
+- **GitHub**: [alchemist-sourav](https://github.com/alchemist-sourav) | [Alchemist1910](https://github.com/Alchemist1910)

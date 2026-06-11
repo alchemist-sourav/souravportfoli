@@ -4,6 +4,20 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
+      title: "Data Scientist",
+      company: "MatRisk AI",
+      period: "05/2026",
+      description: "Data Scientist at MatRisk AI.",
+      certificate: "/certificates/zee_certificate.pdf"
+    },
+    {
+      title: "Full Stack Web Development Intern",
+      company: "Future Interns",
+      period: "05/2026",
+      description: "Successfully completed a 1-month internship program in Full Stack Web Development.",
+      certificate: "/certificates/sourav_internship_certificate.pdf"
+    },
+    {
       title: "Data Science Job Simulation",
       company: "BCG X",
       period: "05/2026",
@@ -14,24 +28,6 @@ const Experience = () => {
       company: "Skyscanner",
       period: "05/2026",
       description: "Completed a job simulation building a web application using React. Developed a page for picking a travel date using Skyscanner’s open-source Backpack React library, customized the application, and ran automated tests to ensure proper rendering."
-    },
-    {
-      title: "Creative Lead",
-      company: "Mulearn.KNP",
-      period: "01/2026 - Present",
-      description: "Led branding and creative initiatives for events. Managed design workflows and promotional assets for community engagement."
-    },
-    {
-      title: "Design Lead",
-      company: "FOSS Club CEKNPY",
-      period: "01/2026 - Present",
-      description: "Managed design workflows and promotional assets. Contributed to digital design projects and visual materials for open-source initiatives."
-    },
-    {
-      title: "Design Lead",
-      company: "IIC CEKNPY",
-      period: "07/2025 - Present",
-      description: "Led UI/design initiatives for innovation events. Maintaining branding consistency and mentoring members."
     },
     {
       title: "Web Lead",
@@ -79,6 +75,19 @@ const Experience = () => {
                 <p className="text-white/50 font-light leading-relaxed max-w-lg">
                   {exp.description}
                 </p>
+                {exp.certificate && (
+                  <a 
+                    href={exp.certificate} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center gap-2 mt-6 text-sm uppercase tracking-widest text-white/40 hover:text-white transition-colors group/link"
+                  >
+                    <span>View Certificate</span>
+                    <svg className="w-4 h-4 transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

@@ -30,9 +30,17 @@ const About = () => {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <h4 className="text-2xl font-medium mb-4">Philosophy</h4>
-            <p className="text-white/50 text-lg leading-relaxed max-w-xl font-light">
-              I am a versatile developer passionate about full-stack web development, applied AI, and UI/UX design. I turn complex ideas into intuitive interfaces and powerful AI-driven platforms.
-            </p>
+            <div className="text-white/50 text-lg leading-relaxed max-w-xl font-light space-y-4">
+              <p>
+                I am an AI & Data Science student, full-stack developer, and creator of Alchemist OS. My passion lies in building intelligent systems that combine AI, automation, and modern design to solve real-world problems.
+              </p>
+              <p>
+                From AI agents and autonomous workflows to scalable web applications, I enjoy transforming ambitious ideas into impactful products. I believe technology should be powerful, intuitive, and accessible, and I strive to create experiences that bridge the gap between human creativity and artificial intelligence.
+              </p>
+              <p>
+                Currently, I am focused on expanding Alchemist OS, an AI-powered ecosystem designed to redefine productivity, automation, and human-AI collaboration.
+              </p>
+            </div>
           </div>
         </motion.div>
 
