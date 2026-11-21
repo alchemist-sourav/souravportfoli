@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Copy, Github, Linkedin, Mail, MapPin } from 'lucide-react';
 
-const CONTACT_EMAIL = 'souravs51380@email.com';
+const CONTACT_EMAIL = 'souravs51380@gmail.com';
 
 const Contact = () => {
   const [copied, setCopied] = useState(false);
