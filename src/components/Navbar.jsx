@@ -4,6 +4,7 @@ import { ArrowUpRight, Menu, X } from 'lucide-react';
 
 const navLinks = [
   { name: 'Work', href: '#projects' },
+  { name: 'Design', href: '#design' },
   { name: 'About', href: '#about' },
   { name: 'Experience', href: '#experience' },
   { name: 'Skills', href: '#skills' },
@@ -44,9 +45,9 @@ const Navbar = () => {
           <span className="text-sm font-semibold tracking-wide text-white">Sourav<span className="text-indigo-300">.</span></span>
         </a>
 
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="text-[11px] font-semibold uppercase tracking-[.15em] text-white/55 transition-colors hover:text-white">
+            <a key={link.name} href={link.href} className="text-[10px] font-semibold uppercase tracking-[.13em] text-white/55 transition-colors hover:text-white">
               {link.name}
             </a>
           ))}
@@ -58,7 +59,7 @@ const Navbar = () => {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white lg:hidden"
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
@@ -75,7 +76,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -8, scale: .98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: .98 }}
-            className="mx-auto mt-2 max-w-6xl rounded-2xl border border-white/10 bg-[#10131a]/95 p-3 shadow-2xl backdrop-blur-2xl md:hidden"
+            className="mx-auto mt-2 max-w-6xl rounded-2xl border border-white/10 bg-[#10131a]/95 p-3 shadow-2xl backdrop-blur-2xl lg:hidden"
           >
             {navLinks.map((link) => (
               <a key={link.name} href={link.href} onClick={closeMenu} className="block rounded-xl px-4 py-3 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-white">
