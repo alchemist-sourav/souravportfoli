@@ -13,7 +13,7 @@ const skillCategories = [
 const Skills = () => (
   <section id="skills" className="section-padding">
     <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
-      <p className="eyebrow">05 / Toolset</p>
+      <p className="eyebrow">06 / Toolset</p>
       <h2 className="section-heading">Tools I use to make things happen<span className="text-indigo-300">.</span></h2>
       <p className="muted-copy mt-4 max-w-2xl leading-7">A practical toolkit across AI, product engineering, data and interface design. I keep learning as the work demands it.</p>
     </motion.div>

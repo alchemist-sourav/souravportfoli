@@ -39,7 +39,6 @@ const GraphicDesign = () => {
       id: 6, 
       title: 'Neethi Web UI/UX', 
       category: 'UI/UX Design', 
-      image: '/images/neethi-figma.jpg',
       link: 'https://www.figma.com/design/38UIYrpbJU9otbXbZaaNRC/Neethi?node-id=0-1&t=3S0Rh2y3h8Y4MvO1-1',
       colSpan: 'md:col-span-2 lg:col-span-2',
       aspect: 'aspect-video'
@@ -54,7 +53,7 @@ const GraphicDesign = () => {
         viewport={{ once: true }}
         className="mb-16"
       >
-        <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-white/40 mb-4">03 // Design</h2>
+        <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-white/40 mb-4">04 // Design</h2>
         <h3 className="text-4xl md:text-5xl font-medium tracking-tight text-text/90">UI/UX & Graphic Design</h3>
         <p className="text-white/50 mt-4 max-w-xl">A collection of my UI/UX and graphic design work including web interfaces, event posters, social media creatives, and digital assets.</p>
       </motion.div>

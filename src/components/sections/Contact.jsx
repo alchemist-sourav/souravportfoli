@@ -32,7 +32,7 @@ const Contact = () => {
     <section id="contact" className="section-padding border-t border-white/[.06]">
       <div className="grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
         <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <p className="eyebrow">06 / Get in touch</p>
+          <p className="eyebrow">07 / Get in touch</p>
           <h2 className="text-5xl font-semibold leading-[1.04] tracking-[-.055em] md:text-6xl">Have a good idea?<br /><span className="text-indigo-200">Let’s build it.</span></h2>
           <p className="mt-6 max-w-md text-base leading-8 text-white/45">Open to thoughtful collaborations, developer opportunities and conversations about AI, software and product building.</p>
 

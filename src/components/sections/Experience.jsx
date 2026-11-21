@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, BriefcaseBusiness } from 'lucide-react';
+import { ArrowUpRight, Briefcase } from 'lucide-react';
 
 const experiences = [
   {
@@ -53,7 +53,7 @@ const Experience = () => (
   <section id="experience" className="section-padding">
     <div className="mx-auto max-w-5xl">
       <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14">
-        <p className="eyebrow">04 / The journey</p>
+        <p className="eyebrow">05 / The journey</p>
         <h2 className="section-heading">Experience & community<span className="text-indigo-300">.</span></h2>
         <p className="muted-copy mt-4 max-w-2xl leading-7">A mix of internships, practical simulations and community roles that continue to shape how I build.</p>
       </motion.div>
@@ -65,18 +65,16 @@ const Experience = () => (
               <p className="text-[10px] font-semibold uppercase tracking-[.16em] text-indigo-200/70">{exp.period}</p>
               <p className="mt-2 text-sm font-semibold text-white/80">{exp.company}</p>
             </div>
-            <div>
-              <div className="flex items-start gap-3">
-                <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/[.08] bg-white/[.03] text-white/55"><BriefcaseBusiness size={15} /></span>
-                <div>
-                  <h3 className="text-base font-semibold text-white/90">{exp.title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-white/45">{exp.description}</p>
-                  {exp.certificate && (
-                    <a href={exp.certificate} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-indigo-200/80 transition-colors hover:text-white">
-                      View certificate <ArrowUpRight size={14} />
-                    </a>
-                  )}
-                </div>
+            <div className="flex items-start gap-3">
+              <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/[.08] bg-white/[.03] text-white/55"><Briefcase size={15} /></span>
+              <div>
+                <h3 className="text-base font-semibold text-white/90">{exp.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-white/45">{exp.description}</p>
+                {exp.certificate && (
+                  <a href={exp.certificate} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-indigo-200/80 transition-colors hover:text-white">
+                    View certificate <ArrowUpRight size={14} />
+                  </a>
+                )}
               </div>
             </div>
           </motion.article>
@@ -85,5 +83,4 @@ const Experience = () => (
     </div>
   </section>
 );
-
 export default Experience;
