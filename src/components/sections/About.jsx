@@ -1,67 +1,61 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowUpRight, Code2, Compass, Lightbulb } from 'lucide-react';
 
-const About = () => {
-  return (
-    <section id="about" className="section-padding">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="mb-20"
-      >
-        <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-white/40 mb-4">01 // About</h2>
-        <h3 className="text-4xl md:text-5xl font-medium tracking-tight text-text/90 max-w-3xl leading-tight">
-          Combining technical expertise with creative design to build impactful, AI-driven products.
-        </h3>
+const highlights = [
+  { icon: Code2, title: 'Engineering mindset', text: 'I enjoy understanding how systems work, then building them with care and purpose.' },
+  { icon: Lightbulb, title: 'Applied AI', text: 'Exploring RAG, LLM applications, automation and practical machine-learning workflows.' },
+  { icon: Compass, title: 'Curious by default', text: 'Learning across software, security, product design and the communities around technology.' },
+];
+
+const About = () => (
+  <section id="about" className="section-padding">
+    <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
+      <p className="eyebrow">02 / A little about me</p>
+      <h2 className="section-heading max-w-4xl">Part engineer, part explorer.<br /><span className="text-white/40">Always building toward what’s next.</span></h2>
+    </motion.div>
+
+    <div className="grid gap-4 lg:grid-cols-[1.2fr_.8fr]">
+      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass-card flex flex-col justify-between p-7 md:p-10">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[.18em] text-white/35">The story so far</p>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/65">
+            I’m Sourav, an AI & Data Science engineering student and developer from Kerala, India. I work across the stack — shaping interfaces, building APIs and experimenting with AI systems that solve concrete problems.
+          </p>
+          <p className="mt-4 max-w-2xl text-base leading-8 text-white/45">
+            My projects range from legal-information tools and AI security testing to opportunity discovery and civil-engineering decision support. I’m especially interested in the space where thoughtful product design meets reliable engineering.
+          </p>
+        </div>
+        <a href="https://github.com/alchemist-sourav" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex w-fit items-center gap-2 text-sm font-semibold text-indigo-200 transition-colors hover:text-white">
+          Follow what I’m building <ArrowUpRight size={16} />
+        </a>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="glass-card p-10 md:col-span-2 flex flex-col justify-between group"
-        >
-          <div>
-            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-8 text-white/50 group-hover:text-white transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h4 className="text-2xl font-medium mb-4">Philosophy</h4>
-            <div className="text-white/50 text-lg leading-relaxed max-w-xl font-light space-y-4">
-              <p>
-                I am an AI & Data Science student, full-stack developer, and creator of Alchemist OS. My passion lies in building intelligent systems that combine AI, automation, and modern design to solve real-world problems.
-              </p>
-              <p>
-                From AI agents and autonomous workflows to scalable web applications, I enjoy transforming ambitious ideas into impactful products. I believe technology should be powerful, intuitive, and accessible, and I strive to create experiences that bridge the gap between human creativity and artificial intelligence.
-              </p>
-              <p>
-                Currently, I am focused on expanding Alchemist OS, an AI-powered ecosystem designed to redefine productivity, automation, and human-AI collaboration.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="glass-card p-10 flex flex-col justify-between group relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div className="relative z-10">
-            <h4 className="text-xl font-medium mb-2">Education</h4>
-            <p className="text-white/40 text-sm mb-8 uppercase tracking-wider">2023 — 2027</p>
-            <div className="text-lg text-white/70 font-light mb-1">B.Tech in AI & Data Science</div>
-            <div className="text-white/40 text-sm">College of Engineering Karunagappally</div>
-          </div>
-        </motion.div>
+      <div className="grid gap-4">
+        {highlights.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <motion.div key={item.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .08 }} className="glass-card p-6">
+              <div className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-indigo-200/15 bg-indigo-300/[.07] text-indigo-200"><Icon size={18} /></span>
+                <h3 className="text-base font-semibold">{item.title}</h3>
+              </div>
+              <p className="mt-4 text-sm leading-7 text-white/45">{item.text}</p>
+            </motion.div>
+          );
+        })}
       </div>
-    </section>
-  );
-};
+    </div>
+
+    <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-4 flex flex-col gap-3 rounded-2xl border border-white/[.08] bg-white/[.025] p-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[.17em] text-white/35">Education</p>
+        <p className="mt-1 text-sm font-semibold text-white/85">B.Tech · Artificial Intelligence & Data Science</p>
+        <p className="mt-1 text-xs text-white/40">College of Engineering Karunagappally</p>
+      </div>
+      <span className="text-xs font-medium tracking-wide text-indigo-200/75">2023 — 2027</span>
+    </motion.div>
+  </section>
+);
 
 export default About;
