@@ -98,7 +98,7 @@ const Projects = () => (
                 <h3 className="text-3xl font-semibold tracking-tight md:text-4xl">{project.title}</h3>
                 <span className="mb-1 hidden text-[10px] uppercase tracking-[.16em] text-white/25 md:inline">0{index + 1}</span>
               </div>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-white/48">{project.description}</p>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-white/[.48]">{project.description}</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {project.tags.map((tag) => <span key={tag} className="rounded-full border border-white/[.09] bg-white/[.025] px-3 py-1.5 text-[10px] font-medium tracking-wide text-white/55">{tag}</span>)}
               </div>
