@@ -1,29 +1,20 @@
 import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="border-t border-white/5 py-12 px-6">
-      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="text-xs uppercase tracking-[0.2em] text-white/30">
-          © {currentYear} Sourav S.
-        </div>
-
-        <div className="flex gap-8">
-          <a href="https://github.com/Alchemist1910" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-[0.2em] text-white/50 hover:text-white transition-colors">
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/souravalchemist" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-[0.2em] text-white/50 hover:text-white transition-colors">
-            LinkedIn
-          </a>
-          <a href="#" className="text-xs uppercase tracking-[0.2em] text-white/50 hover:text-white transition-colors">
-            Instagram
-          </a>
-        </div>
+const Footer = () => (
+  <footer className="border-t border-white/[.07] px-6 py-8 md:px-10">
+    <div className="mx-auto flex max-w-6xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <a href="#home" className="text-sm font-semibold tracking-wide text-white/80">Sourav<span className="text-indigo-300">.</span></a>
+        <p className="mt-1 text-xs text-white/30">© {new Date().getFullYear()} · Built with curiosity and care.</p>
       </div>
-    </footer>
-  );
-};
+      <div className="flex flex-wrap gap-6">
+        <a href="https://github.com/alchemist-sourav" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-white/45 transition-colors hover:text-white">GitHub <ArrowUpRight size={12} /></a>
+        <a href="https://www.linkedin.com/in/souravalchemist" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-white/45 transition-colors hover:text-white">LinkedIn <ArrowUpRight size={12} /></a>
+        <a href="mailto:souravs51380@email.com" className="inline-flex items-center gap-1 text-xs text-white/45 transition-colors hover:text-white">Email <ArrowUpRight size={12} /></a>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;

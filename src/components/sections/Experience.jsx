@@ -1,100 +1,89 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowUpRight, BriefcaseBusiness } from 'lucide-react';
 
-const Experience = () => {
-  const experiences = [
-    {
-      title: "Data Scientist",
-      company: "MatRisk AI",
-      period: "05/2026",
-      description: "Data Scientist at MatRisk AI.",
-      certificate: "/certificates/zee_certificate.pdf"
-    },
-    {
-      title: "Full Stack Web Development Intern",
-      company: "Future Interns",
-      period: "05/2026",
-      description: "Successfully completed a 1-month internship program in Full Stack Web Development.",
-      certificate: "/certificates/sourav_internship_certificate.pdf"
-    },
-    {
-      title: "Data Science Job Simulation",
-      company: "BCG X",
-      period: "05/2026",
-      description: "Completed a customer churn analysis simulation for XYZ Analytics using Python (Pandas, NumPy). Engineered a random forest model achieving a 50% recall rate in predicting customer churn, and delivered an executive summary with actionable insights for decision-making."
-    },
-    {
-      title: "Front-End Software Engineering Virtual Experience",
-      company: "Skyscanner",
-      period: "05/2026",
-      description: "Completed a job simulation building a web application using React. Developed a page for picking a travel date using Skyscanner’s open-source Backpack React library, customized the application, and ran automated tests to ensure proper rendering."
-    },
-    {
-      title: "Web Lead",
-      company: "TinkerHub CEKNPY",
-      period: "07/2025 - 03/2026",
-      description: "Developed and maintained community web platforms with modern design and best practices."
-    },
-    {
-      title: "Design Intern",
-      company: "IEEE SB CEK",
-      period: "09/2025 - 02/2026",
-      description: "Designed event creatives and branding materials to support IEEE initiatives."
-    }
-  ];
+const experiences = [
+  {
+    title: 'Full Stack Developer Intern',
+    company: 'Byamn LMS',
+    period: 'Internship',
+    description: 'Working on a learning-management platform built with Next.js and MongoDB, contributing to student and admin workflows, search, pagination and authorization.',
+  },
+  {
+    title: 'Data Scientist',
+    company: 'MatRisk AI',
+    period: '05 / 2026',
+    description: 'Contributed to data-science work focused on analyzing information and translating it into useful product insights.',
+    certificate: '/certificates/zee_certificate.pdf',
+  },
+  {
+    title: 'Full Stack Web Development Intern',
+    company: 'Future Interns',
+    period: '05 / 2026',
+    description: 'Completed a one-month internship program focused on full-stack web development.',
+    certificate: '/certificates/sourav_internship_certificate.pdf',
+  },
+  {
+    title: 'Data Science Job Simulation',
+    company: 'BCG X',
+    period: '05 / 2026',
+    description: 'Completed a customer-churn analysis simulation using Python, Pandas and NumPy; developed a random-forest model and summarized findings for decision-making.',
+  },
+  {
+    title: 'Front-End Software Engineering Virtual Experience',
+    company: 'Skyscanner',
+    period: '05 / 2026',
+    description: 'Built a React travel-date selection interface using Skyscanner’s Backpack component library and ran automated tests to check rendering.',
+  },
+  {
+    title: 'Web Lead',
+    company: 'TinkerHub CEKNPY',
+    period: '07 / 2025 — 03 / 2026',
+    description: 'Supported the developer community through web-platform work and collaboration around technical initiatives.',
+  },
+  {
+    title: 'Design Intern',
+    company: 'IEEE SB CEK',
+    period: '09 / 2025 — 02 / 2026',
+    description: 'Created event creatives and visual communication assets supporting student-branch activities.',
+  },
+];
 
-  return (
-    <section id="experience" className="section-padding">
-      <div className="max-w-4xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-20 text-center"
-        >
-          <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-white/40 mb-4">04 // Journey</h2>
-          <h3 className="text-4xl md:text-5xl font-medium tracking-tight text-text/90">Experience</h3>
-        </motion.div>
+const Experience = () => (
+  <section id="experience" className="section-padding">
+    <div className="mx-auto max-w-5xl">
+      <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14">
+        <p className="eyebrow">04 / The journey</p>
+        <h2 className="section-heading">Experience & community<span className="text-indigo-300">.</span></h2>
+        <p className="muted-copy mt-4 max-w-2xl leading-7">A mix of internships, practical simulations and community roles that continue to shape how I build.</p>
+      </motion.div>
 
-        <div className="space-y-12">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={exp.title + exp.company}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="flex flex-col md:flex-row gap-4 md:gap-16 border-b border-white/10 pb-12 group"
-            >
-              <div className="md:w-1/3 flex flex-col">
-                <div className="text-sm tracking-widest text-white/40 uppercase mb-2">{exp.period}</div>
-                <div className="text-xl font-medium text-white/80 group-hover:text-white transition-colors">{exp.company}</div>
+      <div className="space-y-3">
+        {experiences.map((exp, index) => (
+          <motion.article key={exp.title + exp.company} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .04 }} className="glass-card grid gap-4 p-6 md:grid-cols-[190px_1fr] md:gap-8 md:p-7">
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[.16em] text-indigo-200/70">{exp.period}</p>
+              <p className="mt-2 text-sm font-semibold text-white/80">{exp.company}</p>
+            </div>
+            <div>
+              <div className="flex items-start gap-3">
+                <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/[.08] bg-white/[.03] text-white/55"><BriefcaseBusiness size={15} /></span>
+                <div>
+                  <h3 className="text-base font-semibold text-white/90">{exp.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-white/45">{exp.description}</p>
+                  {exp.certificate && (
+                    <a href={exp.certificate} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-indigo-200/80 transition-colors hover:text-white">
+                      View certificate <ArrowUpRight size={14} />
+                    </a>
+                  )}
+                </div>
               </div>
-              <div className="md:w-2/3">
-                <h4 className="text-2xl font-medium mb-4 text-white/90">{exp.title}</h4>
-                <p className="text-white/50 font-light leading-relaxed max-w-lg">
-                  {exp.description}
-                </p>
-                {exp.certificate && (
-                  <a 
-                    href={exp.certificate} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="inline-flex items-center gap-2 mt-6 text-sm uppercase tracking-widest text-white/40 hover:text-white transition-colors group/link"
-                  >
-                    <span>View Certificate</span>
-                    <svg className="w-4 h-4 transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </motion.article>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Experience;

@@ -1,93 +1,88 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { ArrowUpRight, Copy, Github, Linkedin, Mail, MapPin } from 'lucide-react';
+
+const CONTACT_EMAIL = 'souravs51380@email.com';
 
 const Contact = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const name = String(form.get('name') || '').trim();
+    const email = String(form.get('email') || '').trim();
+    const subject = String(form.get('subject') || 'Portfolio enquiry').trim();
+    const message = String(form.get('message') || '').trim();
+    const body = `Hi Sourav,\n\n${message}\n\nFrom: ${name}\nReply to: ${email}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(CONTACT_EMAIL);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      window.location.href = `mailto:${CONTACT_EMAIL}`;
+    }
+  };
+
   return (
-    <section id="contact" className="section-padding border-t border-white/5">
-      <div className="flex flex-col lg:flex-row gap-20">
-        <div className="lg:w-1/2">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-white/40 mb-4">05 // Connect</h2>
-            <h3 className="text-5xl md:text-6xl font-medium tracking-tight text-text/90 mb-8">
-              Let's create <br/> something together.
-            </h3>
-            <p className="text-lg text-white/40 max-w-md font-light leading-relaxed mb-16">
-              Have a project in mind or looking for a creative developer? I'm always open to discussing new opportunities.
-            </p>
+    <section id="contact" className="section-padding border-t border-white/[.06]">
+      <div className="grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
+        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <p className="eyebrow">06 / Get in touch</p>
+          <h2 className="text-5xl font-semibold leading-[1.04] tracking-[-.055em] md:text-6xl">Have a good idea?<br /><span className="text-indigo-200">Let’s build it.</span></h2>
+          <p className="mt-6 max-w-md text-base leading-8 text-white/45">Open to thoughtful collaborations, developer opportunities and conversations about AI, software and product building.</p>
 
-            <div className="space-y-10">
-              <div>
-                <div className="text-xs uppercase tracking-[0.2em] text-white/30 mb-2">Email</div>
-                <a href="mailto:souravs51380@email.com" className="text-2xl font-light hover:text-white transition-colors duration-300">
-                  souravs51380@email.com
-                </a>
-              </div>
-              <div>
-                <div className="text-xs uppercase tracking-[0.2em] text-white/30 mb-2">Location</div>
-                <div className="text-2xl font-light text-white/80">Kollam, Kerala</div>
-              </div>
-              <div>
-                <div className="text-xs uppercase tracking-[0.2em] text-white/30 mb-2">Phone</div>
-                <div className="text-2xl font-light text-white/80">+91 8606185711</div>
-              </div>
+          <div className="mt-10 space-y-5">
+            <button type="button" onClick={copyEmail} className="group flex items-center gap-3 text-left">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[.03] text-indigo-200"><Mail size={18} /></span>
+              <span>
+                <span className="block text-[10px] font-semibold uppercase tracking-[.16em] text-white/35">Email</span>
+                <span className="mt-1 block text-sm font-medium text-white/80 transition-colors group-hover:text-indigo-200">{CONTACT_EMAIL}</span>
+              </span>
+              <Copy size={14} className="ml-2 text-white/25" />
+            </button>
+            <div className="flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[.03] text-indigo-200"><MapPin size={18} /></span>
+              <span><span className="block text-[10px] font-semibold uppercase tracking-[.16em] text-white/35">Based in</span><span className="mt-1 block text-sm font-medium text-white/80">Kerala, India</span></span>
             </div>
-          </motion.div>
-        </div>
+          </div>
 
-        <div className="lg:w-1/2">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="glass-card p-10 md:p-14"
-          >
-            <form className="space-y-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="relative">
-                  <input 
-                    type="text" 
-                    placeholder="Name"
-                    className="w-full bg-transparent border-b border-white/20 pb-4 focus:border-white text-white outline-none transition-colors placeholder:text-white/30 font-light"
-                  />
-                </div>
-                <div className="relative">
-                  <input 
-                    type="email" 
-                    placeholder="Email"
-                    className="w-full bg-transparent border-b border-white/20 pb-4 focus:border-white text-white outline-none transition-colors placeholder:text-white/30 font-light"
-                  />
-                </div>
-              </div>
+          <div className="mt-8 flex gap-3">
+            <a aria-label="GitHub" href="https://github.com/alchemist-sourav" target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-white/55 transition-all hover:border-indigo-200/30 hover:text-indigo-200"><Github size={18} /></a>
+            <a aria-label="LinkedIn" href="https://www.linkedin.com/in/souravalchemist" target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-white/55 transition-all hover:border-indigo-200/30 hover:text-indigo-200"><Linkedin size={18} /></a>
+          </div>
+          <p aria-live="polite" className="mt-3 min-h-5 text-xs text-indigo-200/70">{copied ? 'Email address copied.' : ''}</p>
+        </motion.div>
 
-              <div className="relative">
-                <input 
-                  type="text" 
-                  placeholder="Subject"
-                  className="w-full bg-transparent border-b border-white/20 pb-4 focus:border-white text-white outline-none transition-colors placeholder:text-white/30 font-light"
-                />
-              </div>
-
-              <div className="relative">
-                <textarea 
-                  rows="4"
-                  placeholder="Message"
-                  className="w-full bg-transparent border-b border-white/20 pb-4 focus:border-white text-white outline-none transition-colors placeholder:text-white/30 font-light resize-none"
-                ></textarea>
-              </div>
-
-              <button type="submit" className="w-full py-5 flex justify-between items-center group relative overflow-hidden">
-                <span className="relative z-10 text-sm tracking-[0.2em] uppercase font-medium group-hover:text-midnight transition-colors duration-500">Send Message</span>
-                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
-                <svg className="relative z-10 text-white group-hover:text-midnight transition-colors duration-500 transform group-hover:translate-x-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-            </form>
-          </motion.div>
-        </div>
+        <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: .12 }} className="glass-card p-6 md:p-9">
+          <div className="mb-7">
+            <p className="text-sm font-semibold text-white/85">Send a message</p>
+            <p className="mt-1 text-xs leading-6 text-white/40">This opens your email app with the message pre-filled. Nothing is sent automatically.</p>
+          </div>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid gap-6 sm:grid-cols-2">
+              <label className="block text-xs font-medium text-white/55">Your name
+                <input name="name" type="text" autoComplete="name" required placeholder="Name" className="mt-2 w-full rounded-xl border border-white/10 bg-white/[.025] px-4 py-3.5 text-sm text-white outline-none transition-colors placeholder:text-white/25 focus:border-indigo-200/50" />
+              </label>
+              <label className="block text-xs font-medium text-white/55">Email address
+                <input name="email" type="email" autoComplete="email" required placeholder="you@example.com" className="mt-2 w-full rounded-xl border border-white/10 bg-white/[.025] px-4 py-3.5 text-sm text-white outline-none transition-colors placeholder:text-white/25 focus:border-indigo-200/50" />
+              </label>
+            </div>
+            <label className="block text-xs font-medium text-white/55">Subject
+              <input name="subject" type="text" required placeholder="What would you like to discuss?" className="mt-2 w-full rounded-xl border border-white/10 bg-white/[.025] px-4 py-3.5 text-sm text-white outline-none transition-colors placeholder:text-white/25 focus:border-indigo-200/50" />
+            </label>
+            <label className="block text-xs font-medium text-white/55">Message
+              <textarea name="message" rows="5" required placeholder="Tell me a little about it..." className="mt-2 w-full resize-y rounded-xl border border-white/10 bg-white/[.025] px-4 py-3.5 text-sm leading-6 text-white outline-none transition-colors placeholder:text-white/25 focus:border-indigo-200/50" />
+            </label>
+            <button type="submit" className="btn-primary w-full justify-between">
+              Open email draft <ArrowUpRight size={17} />
+            </button>
+          </form>
+        </motion.div>
       </div>
     </section>
   );

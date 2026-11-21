@@ -1,60 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Bot, Braces, Palette, Database, Wrench } from 'lucide-react';
 
-const Skills = () => {
-  const skillCategories = [
-    {
-      title: "AI & Machine Learning",
-      skills: ["RAG Pipeline", "LangChain", "ChromaDB", "Hugging Face", "LLMs", "Speech Recognition", "TTS"]
-    },
-    {
-      title: "Full-Stack Development",
-      skills: ["React.js", "Next.js", "FastAPI", "Python", "Tailwind CSS", "Firebase", "MySQL"]
-    },
-    {
-      title: "Design & Tools",
-      skills: ["Figma", "UI/UX Design", "Git/GitHub", "VS Code", "Photoshop", "Canva"]
-    }
-  ];
+const skillCategories = [
+  { title: 'AI & intelligent systems', icon: Bot, skills: ['Python', 'RAG systems', 'LLM applications', 'LangChain', 'ChromaDB', 'Hugging Face', 'AI agents'] },
+  { title: 'Frontend engineering', icon: Braces, skills: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML & CSS'] },
+  { title: 'Backend & data', icon: Database, skills: ['FastAPI', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Firebase', 'Supabase'] },
+  { title: 'Product & design', icon: Palette, skills: ['Figma', 'UI/UX design', 'Responsive design', 'Prototyping', 'Design systems'] },
+  { title: 'Developer tools', icon: Wrench, skills: ['Git & GitHub', 'VS Code', 'Postman', 'Linux / WSL', 'Docker fundamentals'] },
+];
 
-  return (
-    <section id="skills" className="section-padding">
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="lg:col-span-1"
-        >
-          <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-white/40 mb-4">03 // Expertise</h2>
-          <h3 className="text-3xl font-medium tracking-tight text-text/90">Skills & Tech</h3>
-        </motion.div>
+const Skills = () => (
+  <section id="skills" className="section-padding">
+    <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
+      <p className="eyebrow">05 / Toolset</p>
+      <h2 className="section-heading">Tools I use to make things happen<span className="text-indigo-300">.</span></h2>
+      <p className="muted-copy mt-4 max-w-2xl leading-7">A practical toolkit across AI, product engineering, data and interface design. I keep learning as the work demands it.</p>
+    </motion.div>
 
-        <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {skillCategories.map((cat, idx) => (
-            <motion.div 
-              key={cat.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="border-t border-white/10 pt-6"
-            >
-              <h4 className="text-lg font-medium mb-6 text-white/80">{cat.title}</h4>
-              <ul className="space-y-4">
-                {cat.skills.map(skill => (
-                  <li key={skill} className="text-white/40 font-light tracking-wide text-sm flex items-center gap-3">
-                    <span className="w-1 h-1 bg-white/20 rounded-full"></span>
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+    <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      {skillCategories.map((category, index) => {
+        const Icon = category.icon;
+        return (
+          <motion.div key={category.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .06 }} className="glass-card p-6 md:p-7">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-indigo-200/15 bg-indigo-300/[.07] text-indigo-200"><Icon size={18} /></span>
+              <h3 className="text-sm font-semibold text-white/85">{category.title}</h3>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {category.skills.map((skill) => <span key={skill} className="rounded-lg border border-white/[.08] bg-white/[.025] px-3 py-2 text-xs text-white/55">{skill}</span>)}
+            </div>
+          </motion.div>
+        );
+      })}
+    </div>
+  </section>
+);
 
 export default Skills;
