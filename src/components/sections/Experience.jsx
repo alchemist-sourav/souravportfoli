@@ -53,7 +53,7 @@ const Experience = () => (
   <section id="experience" className="section-padding">
     <div className="mx-auto max-w-5xl">
       <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14">
-        <p className="eyebrow">04 / The journey</p>
+        <p className="eyebrow">05 / The journey</p>
         <h2 className="section-heading">Experience & community<span className="text-indigo-300">.</span></h2>
         <p className="muted-copy mt-4 max-w-2xl leading-7">A mix of internships, practical simulations and community roles that continue to shape how I build.</p>
       </motion.div>
