@@ -103,6 +103,7 @@ souravportfoli/
 - **Email:** [souravs51380@gmail.com](mailto:souravs51380@gmail.com)
 - **GitHub:** [@alchemist-sourav](https://github.com/alchemist-sourav)
 - **LinkedIn:** [Sourav](https://www.linkedin.com/in/souravalchemist)
+- **Digital profile:** [Bitsbee Tree](https://bitsb.ee/sourav.s)
 - **Location:** Kerala, India
 
 ---
