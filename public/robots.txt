@@ -1,1 +1,4 @@
-User-agent: *\nAllow: /\n\nSitemap: https://souravportfoli.vercel.app/sitemap.xml\n
+User-agent: *
+Allow: /
+
+Sitemap: https://souravportfoli.vercel.app/sitemap.xml
