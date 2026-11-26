@@ -51,7 +51,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="mt-8 flex gap-3">
+          <div className="mt-8 flex flex-wrap items-center gap-3">\n            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-indigo-200/25 bg-indigo-200/10 px-4 py-2.5 text-xs font-semibold text-indigo-100 transition-colors hover:bg-indigo-200/15">View résumé <ArrowUpRight size={14} /></a>
             <a aria-label="GitHub" href="https://github.com/alchemist-sourav" target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-white/55 transition-all hover:border-indigo-200/30 hover:text-indigo-200"><Github size={18} /></a>
             <a aria-label="LinkedIn" href="https://www.linkedin.com/in/souravalchemist" target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-white/55 transition-all hover:border-indigo-200/30 hover:text-indigo-200"><Linkedin size={18} /></a>
             <a aria-label="Bitsbee digital profile" href="https://bitsb.ee/sourav.s" target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-white/55 transition-all hover:border-indigo-200/30 hover:text-indigo-200"><Link2 size={18} /></a>
