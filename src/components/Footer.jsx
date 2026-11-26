@@ -12,7 +12,8 @@ const Footer = () => (
         <a href="https://github.com/alchemist-sourav" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-white/45 transition-colors hover:text-white">GitHub <ArrowUpRight size={12} /></a>
         <a href="https://www.linkedin.com/in/souravalchemist" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-white/45 transition-colors hover:text-white">LinkedIn <ArrowUpRight size={12} /></a>
         <a href="https://bitsb.ee/sourav.s" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-white/45 transition-colors hover:text-white">Bitsbee <ArrowUpRight size={12} /></a>
-        <a href="mailto:souravs51380@gmail.com" className="inline-flex items-center gap-1 text-xs text-white/45 transition-colors hover:text-white">Email <ArrowUpRight size={12} /></a>\n        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-white/45 transition-colors hover:text-white">Résumé <ArrowUpRight size={12} /></a>
+        <a href="mailto:souravs51380@gmail.com" className="inline-flex items-center gap-1 text-xs text-white/45 transition-colors hover:text-white">Email <ArrowUpRight size={12} /></a>
+        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-white/45 transition-colors hover:text-white">Résumé <ArrowUpRight size={12} /></a>
       </div>
     </div>
   </footer>
