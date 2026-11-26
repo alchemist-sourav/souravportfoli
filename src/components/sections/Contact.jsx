@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Copy, Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { ArrowUpRight, Copy, Github, Linkedin, Link2, Mail, MapPin } from 'lucide-react';
 
 const CONTACT_EMAIL = 'souravs51380@gmail.com';
 
@@ -54,6 +54,7 @@ const Contact = () => {
           <div className="mt-8 flex gap-3">
             <a aria-label="GitHub" href="https://github.com/alchemist-sourav" target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-white/55 transition-all hover:border-indigo-200/30 hover:text-indigo-200"><Github size={18} /></a>
             <a aria-label="LinkedIn" href="https://www.linkedin.com/in/souravalchemist" target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-white/55 transition-all hover:border-indigo-200/30 hover:text-indigo-200"><Linkedin size={18} /></a>
+            <a aria-label="Bitsbee digital profile" href="https://bitsb.ee/sourav.s" target="_blank" rel="noopener noreferrer" className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-white/55 transition-all hover:border-indigo-200/30 hover:text-indigo-200"><Link2 size={18} /></a>
           </div>
           <p aria-live="polite" className="mt-3 min-h-5 text-xs text-indigo-200/70">{copied ? 'Email address copied.' : ''}</p>
         </motion.div>
